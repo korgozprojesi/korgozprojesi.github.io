@@ -1,0 +1,198 @@
+/* Genel Ayarlar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    color: #f4f4f4;
+  }
+  
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 20px;
+  }
+  
+  /* Navigasyon */
+  header nav {
+    background: #000;
+    padding: 10px 0;
+  }
+  
+  header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+  }
+  
+  header nav ul li {
+    margin: 0 20px;
+  }
+  
+  header nav ul li a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  header nav ul li a:hover {
+    color: #e25822; /* Turuncu */
+  }
+  
+  /* Header (Başlık) Bölümü */
+  header {
+    /* Ateş temalı renkler: kırmızı, bordo, siyah, turuncu, kahverengi, sarı */
+    background: linear-gradient(135deg, #ff0000, #800000, #000000, #ffa500, #8b4513, #ffff00);
+    background-size: 600% 600%;
+    animation: gradientAnimation 16s ease infinite;
+    text-align: center;
+    padding: 60px 20px;
+  }
+  
+  .header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .header-content p {
+    font-size: 1.2rem;
+  }
+  
+  /* Gradient Animasyonu */
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Bölüm Ayarları */
+  section {
+    padding: 40px 0;
+    background: #1e1e1e;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #444;
+  }
+  
+  section:nth-of-type(even) {
+    background: #2a2a2a;
+  }
+  
+  section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: #e25822;
+  }
+  
+  /* Blog Bölümü */
+  .blog-post {
+    background: #333;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #ff0000;
+  }
+  
+  .blog-post h3 {
+    color: #ffa500;
+  }
+  
+  /* Ürün Tanıtım Bölümü */
+  .product {
+    display: inline-block;
+    width: 45%;
+    margin: 2.5%;
+    background: #333;
+    padding: 20px;
+    text-align: center;
+    vertical-align: top;
+  }
+  
+  .product img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product h3 {
+    margin-top: 10px;
+    color: #ffff00;
+  }
+  
+  /* Galeri Bölümü */
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .gallery img {
+    width: 45%;
+    margin: 10px 0;
+    border: 3px solid #e25822;
+  }
+  
+  /* İletişim Formu */
+  form {
+    background: #333;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ffa500;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+  }
+  
+  button {
+    background: #e25822;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 3px;
+  }
+  
+  button:hover {
+    background: #ff0000;
+  }
+  
+  /* Alt Bilgi */
+  footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  /* Responsive Ayarlar */
+  @media (max-width: 768px) {
+    .product {
+      width: 100%;
+      margin: 10px 0;
+    }
+    .gallery img {
+      width: 100%;
+    }
+    header h1 {
+      font-size: 2.5rem;
+    }
+  }
+  
