@@ -66,15 +66,7 @@
       </div>
     </div>
   </section>
-<!-- Diğer bölümlerin altına yeni bir ödeme bölümü ekliyoruz -->
-<section id="odeme">
-    <div class="container">
-      <h2>Ödeme</h2>
-      <!-- PayPal butonunun yer alacağı alan -->
-      <div id="paypal-button-container"></div>
-    </div>
-  </section>
-  
+
   <!-- Galeri Bölümü -->
   <section id="galeri">
     <div class="container">
@@ -121,36 +113,3 @@
   <script src="scripts.js"></script>
 </body>
 </html>
-<!-- PayPal SDK'sını sitenize ekleyin. (YOUR_CLIENT_ID kısmını kendi Client ID'nizle değiştirin) -->
-<script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=TRY"></script>
-<script>
-  // PayPal butonlarının oluşturulması
-  paypal.Buttons({
-      // Ödeme siparişi oluşturma işlemi
-      createOrder: function(data, actions) {
-          return actions.order.create({
-              purchase_units: [{
-                  amount: {
-                      value: '10.00' // Ödenecek tutar (örneğin 10 TL)
-                  }
-              }]
-          });
-      },
-      // Ödeme onaylandığında yapılacak işlemler
-      onApprove: function(data, actions) {
-          return actions.order.capture().then(function(details) {
-              // Ödeme başarılı olduğunda kullanıcıya bildirim
-              alert('Ödeme başarılı, ' + details.payer.name.given_name + '!');
-              // Burada sipariş işlemleri veya sunucuya bildirim gibi ek adımları ekleyebilirsiniz.
-          });
-      },
-      // İptal veya hata durumunda (opsiyonel)
-      onCancel: function (data) {
-          alert('Ödeme iptal edildi.');
-      },
-      onError: function (err) {
-          console.error('Ödeme sırasında bir hata oluştu:', err);
-          alert('Ödeme sırasında bir hata meydana geldi. Lütfen daha sonra tekrar deneyin.');
-      }
-  }).render('#paypal-button-container'); // Butonun yerleştirileceği HTML elementi
-</script>
