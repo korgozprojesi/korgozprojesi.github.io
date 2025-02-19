@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Teknofest Proje Tanıtımı</title>
+  <title>Korgöz Projesi</title>
   <!-- Harici CSS dosyası -->
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -14,7 +14,7 @@
       <ul>
         <li><a href="#anasayfa">Ana Sayfa</a></li>
         <li><a href="#blog">Blog</a></li>
-        <li><a href="#urunler">Ürün Tanıtımı</a></li>
+        <li><a href="#urunler">Dronumuz</a></li>
         <li><a href="#galeri">Galeri</a></li>
         <li><a href="#iletisim">İletişim</a></li>
         <li><a href="#odeme">Ödeme</a></li>
@@ -58,11 +58,6 @@
       <div class="product">
         <img src="urun1.jpg" alt="Ürün 1">
         <h3>Ürün Adı 1</h3>
-        <p>Ürün açıklaması...</p>
-      </div>
-      <div class="product">
-        <img src="urun2.jpg" alt="Ürün 2">
-        <h3>Ürün Adı 2</h3>
         <p>Ürün açıklaması...</p>
       </div>
     </div>
@@ -111,33 +106,7 @@
     </div>
   </section>
   
-  <!-- PayPal SDK (Client ID’nizi eklemeyi unutmayın) -->
-  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=TRY"></script>
-  <script>
-    paypal.Buttons({
-      createOrder: function(data, actions) {
-        return actions.order.create({
-          purchase_units: [{
-            amount: {
-              value: '10.00' // Ödenecek tutar (örneğin 10 TL)
-            }
-          }]
-        });
-      },
-      onApprove: function(data, actions) {
-        return actions.order.capture().then(function(details) {
-          alert('Ödeme başarılı, ' + details.payer.name.given_name + '!');
-        });
-      },
-      onCancel: function(data) {
-        alert('Ödeme iptal edildi.');
-      },
-      onError: function(err) {
-        console.error('Ödeme sırasında hata:', err);
-        alert('Ödeme sırasında bir hata oluştu.');
-      }
-    }).render('#paypal-button-container');
-  </script>
+
   
 </body>
 </html>
